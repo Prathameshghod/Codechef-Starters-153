@@ -1,0 +1,56 @@
+Butterfly
+
+for _ in range(int(input())):
+    r,g,b=map(int,input().split())
+    if (r+g)<b or (r+b)<g or (g+b)<r:
+        print("NO")
+    else:
+        print("YES")
+
+###################################################################################
+
+Make Arithmetic Progression
+
+for _ in range(int(input())):
+    a,b,c=map(int,input().split())
+    if b-a==c-b:
+        print(0)
+    else:
+        print(1)
+
+###################################################################################
+
+Another Game
+
+for _ in range(int(input())):
+    a=int(input())
+    b=list(map(int,input().split()))
+    c=sorted(b)
+    if b==c:
+        print(0)
+        continue 
+    d=0
+    for i in range(a-1,-1,-1):
+        if b[i]!=c[i]:
+            d=1+max(b[i],c[i])
+            break 
+    print(d)
+
+###################################################################################
+
+Colorful Tree (Easy Version)
+
+for _ in range(int(input())):
+    a=int(input())
+    r=[[] for _ in range(a+1)]
+    for _ in range(a-1):
+        b,c=map(int,input().split())
+        r[b].append(c)
+        r[c].append(b)
+    d=0 
+    for i in range(1,a+1):
+        if len(r[i])==1:
+            d+=1 
+    e=a-d 
+    f=d*3+e*2
+    print(f)
